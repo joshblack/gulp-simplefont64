@@ -1,5 +1,7 @@
 # gulp-simplefont64
 
+[![Build Status](https://travis-ci.org/joshblack/gulp-simplefont64.png?branch=master)](https://travis-ci.org/joshblack/gulp-simplefont64) [![NPM version](https://badge.fury.io/js/gulp-simplefont64.png)](http://badge.fury.io/js/gulp-simplefont64)
+
 > Encode base64 data from font-files and store the resulting fonts grouped according to font-family in a css file.
 
 Encoding fonts in base64 is great but often you just end up with a list of font-families like: `PlayfairDisplay-Black`, `PlayfairDisplay-Regular`, `PlayfairDisplay-Italic`, instead of just grouping them all under the same font-family and giving the font faces the appropriate rule declarations.
