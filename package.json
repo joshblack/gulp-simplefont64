@@ -1,0 +1,38 @@
+{
+  "name": "gulp-simplefont64",
+  "version": "0.0.1",
+  "description": "Create base64 data from font files and group them into appropriate font families",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshblack/gulp-simplefont64"
+  },
+  "keywords": [
+    "gulpplugin", "encode", "base64", "font", "css", "ttf", "otf"
+  ],
+  "author": {
+    "name": "Josh Black <joshuatblack@ufl.edu>",
+    "url": "https://github.com/joshblack"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "~2.2.14",
+    "through2": "~0.4.1",
+    "cheerio": "~0.13.1",
+    "mime": "~1.2.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/joshblack/gulp-simplefont64/issues"
+  },
+  "homepage": "https://github.com/joshblack/gulp-simplefont64"
+}
