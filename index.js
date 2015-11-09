@@ -24,11 +24,12 @@ module.exports = function() {
       var fontToBase64 = new Buffer(file.contents).toString('base64'),
           fileName = path.basename(file.path, path.extname(file.path)),
           styleRules = {
-            black:      "font-weight: 800; ",
+            black:      "font-weight: 900; ",
             bold:       "font-weight: 700; ",
-            semibold:   "font-weight: 600; ",
+            medium:     "font-weight: 500; ",
             regular:    "font-weight: 400; ",
-            light:      "font-weight: 200; ",
+            light:      "font-weight: 300; ",
+            thin:       "font-weight: 200; ",
             italic:     "font-style: italic; "
           },
 
