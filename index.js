@@ -7,7 +7,7 @@ var fs      = require('fs'),
 module.exports = function() {
   "use strict";
 
-  function gulpSimpleFont64(file, enc, callback) {
+  return through.obj(function(file, enc, callback) {
 
     // Do nothing if no contents
     if (file.isNull()) {
@@ -24,12 +24,12 @@ module.exports = function() {
       var fontToBase64 = new Buffer(file.contents).toString('base64'),
           fileName = path.basename(file.path, path.extname(file.path)),
           styleRules = {
-            black:      "font-weight: 800;",
-            bold:       "font-weight: 700;",
-            semibold:   "font-weight: 600;",
-            regular:    "font-weight: 400;",
-            light:      "font-weight: 200;",
-            italic:     "font-style: italic;"
+            black:      "font-weight: 800; ",
+            bold:       "font-weight: 700; ",
+            semibold:   "font-weight: 600; ",
+            regular:    "font-weight: 400; ",
+            light:      "font-weight: 200; ",
+            italic:     "font-style: italic; "
           },
 
           // Filenames should be of the style: FontFamily-Style1-Style2...
@@ -39,19 +39,17 @@ module.exports = function() {
 
       css += fontAttrs.map(function(attr) {
         // Format our font attributes
-        return attr.toLowerCase();  
+        return attr.toLowerCase();
       }).reduce(function(prev, attr) {
         return styleRules[attr] ? prev + ' ' + styleRules[attr] : prev;
       }, String());
 
-      css += 'src: url(data:' + mime.lookup(file.path) + '; base64,' + fontToBase64 + ');}';
+      css += 'src: url(data:' + mime.lookup(file.path) + ';base64,' + fontToBase64 + ');}';
 
       file.contents = new Buffer(css);
       file.path = gutil.replaceExtension(file.path, '.css');
 
       return callback(null, file);
     }
-  };
-
-  return through.obj(gulpSimpleFont64);
+  });
 };
