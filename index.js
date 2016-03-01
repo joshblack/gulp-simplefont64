@@ -26,9 +26,11 @@ module.exports = function() {
           styleRules = {
             black:      "font-weight: 900; ",
             bold:       "font-weight: 700; ",
+            semibold:   "font-weight: 600; ",
             medium:     "font-weight: 500; ",
             regular:    "font-weight: 400; ",
             light:      "font-weight: 300; ",
+            extralight: "font-weight: 200; ",
             thin:       "font-weight: 200; ",
             italic:     "font-style: italic; "
           },
