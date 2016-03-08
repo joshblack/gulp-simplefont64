@@ -45,7 +45,7 @@ module.exports = function() {
         return styleRules[attr] ? prev + ' ' + styleRules[attr] : prev;
       }, String());
 
-      css += 'src: url(data:' + mime.lookup(file.path) + ';base64,' + fontToBase64 + ');}';
+      css += 'src: url("data:' + mime.lookup(file.path) + ';base64,' + fontToBase64 + '");}';
 
       file.contents = new Buffer(css);
       file.path = gutil.replaceExtension(file.path, '.css');
