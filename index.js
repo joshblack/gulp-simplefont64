@@ -36,7 +36,7 @@ module.exports = function() {
           // Filenames should be of the style: FontFamily-Style1-Style2...
           fontAttrs = fileName.split('-'),
           fontFamily = fontAttrs.shift(),
-          css = '@font-face { font-family: ' + fontFamily + '; ';
+          css = '@font-face { font-family: \'' + fontFamily + '\'; ';
 
       css += fontAttrs.map(function(attr) {
         // Format our font attributes
